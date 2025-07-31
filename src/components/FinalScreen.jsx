@@ -7,19 +7,22 @@ export default function FinalScreen({ currentIndex, finalMessage }) {
     <div className="min-h-screen flex items-center justify-center text-center px-6 relative">
       <div className="max-w-4xl z-10">
         <div>
-          {"Tu ketee bhe dhur ho, Mai kete bhe dhur honde tere yaddo mey hee hu 😥, mai ketaa love kartun ki otaa he miss kartu hu tujhe 😓, I love you Muhassina and I lots of miss you maaaaaa 🥲, mai wait karunga tere liye aur kete bhee din ho bad mera dil mat thodnaa 😥, I miss you maaa ❤️‍🩹" }
+          {"Tu ketee bhe dhur ho, Mai kete bhe dhur honde tere yaddo mey hee hu 😥, mai ketaa love kartun ki otaa he miss kartu hu tujhe 😓, I love you Muhassina and I lots of miss you maaaaaa 🥲, mai wait karunga tere liye aur kete bhee din ho but mera dil mat thodnaa 😥, I miss you maaa ❤️‍🩹" }
         </div>
       </div>
     </div>
   )
 }
-                    className="mb-8 flex justify-center"
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                >
+const FinalScreen = () => {
+  return {
+  <div className="mb-8 flex justify-center">
+   <h1>Final Screen Content</h1>
+    </div>
+    };
+};
+
+export default FinalScreen;
                     <div><img src="/gifs/us.gif" alt="us gif" className="w-48" /></div>
-                </.div>
 
                 <motion.h2
                     className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
