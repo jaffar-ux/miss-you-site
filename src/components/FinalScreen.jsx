@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "motion/react"
 import { useState, useEffect } from "react"
 
 export default function FinalScreen({ ...motionProps }) {
@@ -24,17 +23,17 @@ export default function FinalScreen({ ...motionProps }) {
     }, [currentIndex, finalMessage])
 
     return (
-        <motion.div {...motionProps} className="min-h-screen flex items-center justify-center text-center px-6 relative">
+        <.div {...motionProps} className="min-h-screen flex items-center justify-center text-center px-6 relative">
 
             <div className="max-w-4xl z-10">
-                <motion.div
+                <.div
                     className="mb-8 flex justify-center"
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.3 }}
                 >
                     <div><img src="/gifs/us.gif" alt="us gif" className="w-48" /></div>
-                </motion.div>
+                </.div>
 
                 <motion.h2
                     className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
@@ -45,7 +44,7 @@ export default function FinalScreen({ ...motionProps }) {
                     Mai kabee tereach hu aur rahunga
                 </motion.h2>
 
-                <motion.div
+                <.div
                     className="bg-gray-950/50 backdrop-blur-md border border-pink-500/10 rounded-3xl p-5 md:p-10 shadow-2xl mb-8"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -61,8 +60,8 @@ export default function FinalScreen({ ...motionProps }) {
                             />
                         )}
                     </p>
-                </motion.div>
+                <.div>
             </div>
-        </motion.div>
+         </.div>
     )
 }
