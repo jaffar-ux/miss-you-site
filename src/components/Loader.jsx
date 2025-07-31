@@ -1,7 +1,6 @@
 "use client"
 
 import { Heart } from "lucide-react";
-import { motion } from "motion/react"
 import { useEffect, useState } from "react";
 
 export default function Loader() {
@@ -18,14 +17,11 @@ export default function Loader() {
     }, []);
 
     const SubtleStars = () => (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+        <div
             className="fixed inset-0 overflow-hidden pointer-events-none"
         >
             {stars.map((star, i) => (
-                <motion.div
+                <div
                     key={i}
                     className="absolute w-0.5 h-0.5 bg-white rounded-full"
                     style={{
@@ -43,10 +39,9 @@ export default function Loader() {
                     }}
                 />
             ))}
-        </motion.div>
+        </.div>
     )
-
-    // More realistic ECG heartbeat pattern
+    
     const heartbeatPath = "M0,50 L30,50 L35,50 L40,30 L45,70 L50,10 L55,90 L60,50 L90,50 L95,50 L100,35 L105,65 L110,15 L115,85 L120,50 L150,50 L155,50 L160,40 L165,60 L170,20 L175,80 L180,50 L210,50 L215,50 L220,45 L225,55 L230,25 L235,75 L240,50 L270,50 L275,50 L280,50 L300,50"
 
     return (
@@ -55,16 +50,15 @@ export default function Loader() {
 
             <div className="text-center z-10">
                 <div className="mb-12 relative">
-                    <motion.div
+                    <div
                         className="w-32 h-32 mx-auto mb-6 relative"
-                        initial={{ opacity: 0, y: -40 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        <div className="transition-all duration-500">
                         transition={{
                             duration: 0.6,
                             ease: "easeOut",
                         }}
                     >
-                        <motion.div
+                        <div
                             className="flex items-center justify-center w-full h-full"
                             animate={{
                                 rotate: [0, 10, -10, 0],
@@ -77,11 +71,11 @@ export default function Loader() {
                             }}
                         >
                             <span className="text-7xl">💖</span>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
 
 
-                    <motion.div
+                    <div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: .5 }}
@@ -144,7 +138,7 @@ export default function Loader() {
                                 />
                             </motion.circle>
                         </svg>
-                    </motion.div>
+                    </div>
                 </div>
 
                 <motion.p
@@ -156,14 +150,14 @@ export default function Loader() {
                     My heart beats for you...
                 </motion.p>
 
-                <motion.div
+                <div
                     className="mt-6 flex justify-center space-x-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2.5 }}
                 >
                     {[...Array(3)].map((_, i) => (
-                        <motion.div
+                        <div
                             key={i}
                             className="w-2 h-2 bg-pink-400/60 rounded-full"
                             animate={{
@@ -177,7 +171,7 @@ export default function Loader() {
                             }}
                         />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </div>
     )
