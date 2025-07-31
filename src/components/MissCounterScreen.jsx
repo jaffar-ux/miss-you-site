@@ -91,7 +91,7 @@ export default function MissCounterScreen({ onNext, ...motionProps }) {
           transition={{ delay: 7.4 }}
           disabled={!showInfinity}
         >
-          Hear my heart💗
+          Mere Dil ki baat suun💗
         </motion.button>
       </div>
     </motion.div>
