@@ -31,7 +31,7 @@ export default function WelcomeScreen({ onNext, ...motionProps }) {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.9 }}
                 >
-                    Do you even know how much I miss you?
+                    Tujhe malum kya mai kitna Miss kiya ?
                 </motion.p>
 
                 <motion.div
@@ -46,7 +46,7 @@ export default function WelcomeScreen({ onNext, ...motionProps }) {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        <span className="relative z-10">Open My Heart 💕</span>
+                        <span className="relative z-10">Mere dil ko khol 💕</span>
                     </motion.button>
                 </motion.div>
             </div>
