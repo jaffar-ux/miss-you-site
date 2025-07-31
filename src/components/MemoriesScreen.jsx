@@ -9,10 +9,10 @@ import "swiper/css/pagination"
 
 export default function MemoriesScreen({ onNext, ...motionProps }) {
     const memories = [
-        { id: 1, imgSrc: "./images/1.jpg", title: "Our First Date", emoji: "💕", color: "from-pink-400 to-purple-500" },
-        { id: 2, imgSrc: "./images/2.jpg", title: "That Cute Selfie", emoji: "📸", color: "from-purple-400 to-pink-500" },
-        { id: 3, imgSrc: "./images/3.jpg", title: "Dancing Together", emoji: "💃", color: "from-blue-400 to-purple-500" },
-        { id: 4, imgSrc: "./images/4.jpg", title: "Sunset Walks", emoji: "🌅", color: "from-orange-400 to-pink-500" },
+        { id: 1, imgSrc: "./images/01.jpg", title: "", emoji: "💕", color: "from-pink-400 to-purple-500" },
+        { id: 2, imgSrc: "./images/02.jpg", title: "", emoji: "📸", color: "from-purple-400 to-pink-500" },
+        { id: 3, imgSrc: "./images/04.jpg", title: "", emoji: "💃", color: "from-blue-400 to-purple-500" },
+        { id: 4, imgSrc: "./images/03.jpg", title: "", emoji: "🌅", color: "from-orange-400 to-pink-500" },
     ]
 
     return (
@@ -32,7 +32,7 @@ export default function MemoriesScreen({ onNext, ...motionProps }) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
             >
-                These memories… they make me miss you even more❤️
+                These memories… they make me miss you even more Muhassina 😥
             </motion.p>
 
             <motion.div
@@ -78,7 +78,7 @@ export default function MemoriesScreen({ onNext, ...motionProps }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5 }}
             >
-                One Last Thing💝
+                One Last Thing my love 😘 
             </motion.button>
         </motion.div>
     )
