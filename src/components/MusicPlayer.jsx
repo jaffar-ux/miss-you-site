@@ -7,7 +7,7 @@ export default function MusicPlayer({ musicPlaying }) {
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = 0.5; // Adjust the song volume here
+            audioRef.current.volume = 1.5; // Adjust the song volume here
             if (musicPlaying) {
                 audioRef.current.play().catch(console.error)
             } else {
