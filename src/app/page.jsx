@@ -1,20 +1,55 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "motion/react"
-import Loader from "@/components/Loader"
-import WelcomeScreen from "@/components/WelcomeScreen"
-import MissCounterScreen from "@/components/MissCounterScreen"
-import MessageScreen from "@/components/MessageScreen"
-import MemoriesScreen from "@/components/MemoriesScreen"
-import FinalScreen from "@/components/FinalScreen"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
-import MusicPlayer from "@/components/MusicPlayer"
+import React, { useState, useEffect, useRef } from 'react'
+import { Play, Pause } from 'lucide-react'  // Add this import
+
+const BackgroundMusic = ({ musicPlaying, setMusicPlaying }) => {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      if (musicPlaying) {
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log("Auto-play prevented:", error);
+          });
+        }
+      } else {
+        audio.pause();
+      }
+    }
+  }, [musicPlaying]);
+
+  const togglePlay = () => {
+    setMusicPlaying(!musicPlaying);
+  };
+
+  return (
+    <>
+      <audio
+        ref={audioRef}
+        loop
+        preload="auto"
+        src="/Bgm new.mp3"
+      />
+      
+      {/* Play/Pause Button */}
+      <button
+        onClick={togglePlay}
+        className="fixed bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-full p-3 text-white hover:bg-black/70 transition-colors z-50"
+      >
+        {musicPlaying ? <Pause size={24} /> : <Play size={24} />}
+      </button>
+    </>
+  );
+};
 
 export default function Home() {
   const [currentScreen, setCurrentScreen] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
-  const [musicPlaying, setMusicPlaying] = useState(false)
+  const [musicPlaying, setMusicPlaying] = useState(false)  // Add this line
   const [showMusicControl, setShowMusicControl] = useState(false)
 
   useEffect(() => {
@@ -27,7 +62,7 @@ export default function Home() {
   const nextScreen = () => {
     if (currentScreen === 0) {
       setShowMusicControl(true)
-      setMusicPlaying(true)
+      setMusicPlaying(true)  // Add this line to start music
     }
     setCurrentScreen((prev) => (prev + 1) % 5)
   }
@@ -39,7 +74,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black relative overflow-hidden font-cute">
       <BackgroundAnimation />
-
+      
+      {/* Add this BackgroundMusic component */}
+      <BackgroundMusic musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
+      
       {/* For background song */}
       {/* {showMusicControl && (
         <MusicPlayer musicPlaying={musicPlaying} />
@@ -91,6 +129,7 @@ export default function Home() {
             key="final"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           />
         )}
@@ -104,8 +143,9 @@ export default function Home() {
           duration: 0.5,
           delay: 1,
         }}
-        className="fixed bottom-4 right-4 text-xs text-white/40 pointer-events-none select-none z-50 font-light">
-        @anujbuilds
+        className="fixed bottom-4 right-4 text-xs text-white/40 pointer-events-none"
+      >
+        @jaffarprogram
       </motion.div>
     </div>
   )
