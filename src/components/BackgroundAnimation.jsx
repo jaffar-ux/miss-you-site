@@ -30,7 +30,7 @@ const BackgroundAnimation = memo(function BackgroundAnimation() {
             className="fixed inset-0 overflow-hidden pointer-events-none"
         >
             {hearts.map((heart, i) => (
-                <motion.div
+                <div
                     key={i}
                     className="absolute text-pink-300/50"
                     style={{
@@ -60,7 +60,7 @@ const BackgroundAnimation = memo(function BackgroundAnimation() {
             className="fixed inset-0 overflow-hidden pointer-events-none"
         >
             {stars.map((star, i) => (
-                <motion.div
+                <div
                     key={i}
                     className="absolute w-0.5 h-0.5 bg-white rounded-full"
                     style={{
