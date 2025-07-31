@@ -1,5 +1,4 @@
 import { memo, useEffect, useState } from 'react'
-import { motion } from "motion/react"
 
 const BackgroundAnimation = memo(function BackgroundAnimation() {
     const [stars, setStars] = useState([]);
@@ -27,10 +26,7 @@ const BackgroundAnimation = memo(function BackgroundAnimation() {
     }, []);
 
     const FloatingHearts = () => (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+        <div
             className="fixed inset-0 overflow-hidden pointer-events-none"
         >
             {hearts.map((heart, i) => (
@@ -54,16 +50,13 @@ const BackgroundAnimation = memo(function BackgroundAnimation() {
                     }}
                 >
                     ❤️
-                </motion.div>
+                </div>
             ))}
-        </motion.div>
+        </div>
     )
 
     const SubtleStars = () => (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+        <div
             className="fixed inset-0 overflow-hidden pointer-events-none"
         >
             {stars.map((star, i) => (
@@ -85,7 +78,7 @@ const BackgroundAnimation = memo(function BackgroundAnimation() {
                     }}
                 />
             ))}
-        </motion.div>
+        </div>
     )
     return (
         <div className='fixed min-h-screen'>
