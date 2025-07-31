@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "motion/react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow, Pagination } from "swiper/modules"
 import "swiper/css"
@@ -16,15 +15,10 @@ export default function MemoriesScreen({ onNext, ...motionProps }) {
     ]
 
     return (
-        <motion.div {...motionProps} className="min-h-screen flex flex-col items-center justify-center px-4 py-8 relative">
-            <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="mb-6 flex justify-center"
-            >
+        <div {...motionProps} className="min-h-screen flex flex-col items-center justify-center px-4 py-8 relative">
+            <div className="animate-fade-in...">
                 <div className="mb-4"><img src="/gifs/cute.gif" alt="cute gif" className="w-48" /></div>
-            </motion.div>
+            </div>
 
             <motion.p
                 className="text-gray-300 text-lg mb-8 text-center font-light"
@@ -35,7 +29,7 @@ export default function MemoriesScreen({ onNext, ...motionProps }) {
                 These memories… they make me miss you even more Muhassina 😥
             </motion.p>
 
-            <motion.div
+            <div
                 className="w-full max-w-5xl"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -67,7 +61,7 @@ export default function MemoriesScreen({ onNext, ...motionProps }) {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </motion.div>
+            </div>
 
             <motion.button
                 className="mt-8 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-teal-500/25 transition-all"
@@ -80,6 +74,6 @@ export default function MemoriesScreen({ onNext, ...motionProps }) {
             >
                 One Last Thing my love 😘 
             </motion.button>
-        </motion.div>
+        </div>
     )
 }
