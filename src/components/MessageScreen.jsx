@@ -9,7 +9,7 @@ export default function MessageScreen({ onNext, ...motionProps }) {
     const [isTyping, setIsTyping] = useState(true)
 
     const message =
-        "My darling, every star in this endless sky whispers your name to me. The moon feels lonely without your radiant smile to compete with its glow. Distance is just a number when you mean everything to my heart. You are my sunshine in the darkest nights, my anchor in the stormiest seas. I love you more than all the stars combined💕✨"
+        "My darling Muhassina, ess duniya me ketee ladkiya bhe ho sirf tera naam he yad ata hai. Bas kider tho tera naam sunte he mere mupe muskurat ata hai. Distance bolneka sirf ek word but mere dil hamesha tu he hai. I love you soo much to you my girl💕✨"
 
     useEffect(() => {
         if (currentIndex < message.length) {
@@ -64,7 +64,7 @@ export default function MessageScreen({ onNext, ...motionProps }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        Our Memories📸
+                        Hamare yaadein📸
                     </motion.button>
                 )}
             </div>
