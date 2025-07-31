@@ -1,32 +1,18 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 
-export default function FinalScreen({ ...motionProps }) {
-    const [displayText, setDisplayText] = useState("")
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [isTyping, setIsTyping] = useState(true)
-
-    const finalMessage =
-        "Tu ketee bhe dhur ho, Mai kete bhe dhur honde tere yaddo mey hee hu 😥, mai ketaa love kartun ki otaa he miss kartu hu tujhe 😓, I love you Muhassina and I lots of miss you maaaaaa 🥲, mai wait karunga tere liye aur kete bhee din ho bad mera dil mat thodnaa 😥, I miss you maaa ❤️‍🩹"
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (currentIndex < finalMessage.length) {
-                setDisplayText((prev) => prev + finalMessage[currentIndex])
-                setCurrentIndex((prev) => prev + 1)
-            } else {
-                setIsTyping(false)
-            }
-        }, 30)
-        return () => clearTimeout(timer)
-    }, [currentIndex, finalMessage])
-
-    return (
-        <.div {...motionProps} className="min-h-screen flex items-center justify-center text-center px-6 relative">
-
-            <div className="max-w-4xl z-10">
-                <.div
+export default function FinalScreen({ currentIndex, finalMessage }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center text-center px-6 relative">
+      <div className="max-w-4xl z-10">
+        <div>
+          {"Tu ketee bhe dhur ho, Mai kete bhe dhur honde tere yaddo mey hee hu 😥, mai ketaa love kartun ki otaa he miss kartu hu tujhe 😓, I love you Muhassina and I lots of miss you maaaaaa 🥲, mai wait karunga tere liye aur kete bhee din ho bad mera dil mat thodnaa 😥, I miss you maaa ❤️‍🩹" }
+        </div>
+      </div>
+    </div>
+  )
+}
                     className="mb-8 flex justify-center"
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
