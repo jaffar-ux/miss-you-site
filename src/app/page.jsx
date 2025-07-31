@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Play, Pause } from 'lucide-react'
 import BackgroundAnimation from '../components/BackgroundAnimation'
 import Loader from '../components/Loader'
 import WelcomeScreen from '../components/WelcomeScreen'
@@ -10,7 +9,6 @@ import MessageScreen from '../components/MessageScreen'
 import MemoriesScreen from '../components/MemoriesScreen'
 import FinalScreen from '../components/FinalScreen'
 
-// Background Music Component
 const BackgroundMusic = ({ musicPlaying, setMusicPlaying }) => {
   const audioRef = useRef(null);
 
@@ -43,12 +41,12 @@ const BackgroundMusic = ({ musicPlaying, setMusicPlaying }) => {
         src="/audio/Bgm new.mp3"
       />
       
-      {/* Play/Pause Button */}
+      {/* Play/Pause Button with Text Icons */}
       <button
         onClick={togglePlay}
-        className="fixed bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-full p-3 text-white hover:bg-black/70 transition-colors z-50"
+        className="fixed bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center text-white hover:bg-black/70 transition-colors z-50 text-xl"
       >
-        {musicPlaying ? <Pause size={24} /> : <Play size={24} />}
+        {musicPlaying ? '⏸️' : '▶️'}
       </button>
     </>
   );
@@ -86,38 +84,28 @@ export default function Home() {
       {/* Background Music Component */}
       <BackgroundMusic musicPlaying={musicPlaying} setMusicPlaying={setMusicPlaying} />
 
-      {/* Screen Transitions with CSS animations */}
+      {/* Screen Transitions */}
       <div className="relative z-10">
         {currentScreen === 0 && (
-          <div className="animate-fade-in">
-            <WelcomeScreen onNext={nextScreen} />
-          </div>
+          <WelcomeScreen onNext={nextScreen} />
         )}
         {currentScreen === 1 && (
-          <div className="animate-slide-in-right">
-            <MissCounterScreen onNext={nextScreen} />
-          </div>
+          <MissCounterScreen onNext={nextScreen} />
         )}
         {currentScreen === 2 && (
-          <div className="animate-slide-in-up">
-            <MessageScreen onNext={nextScreen} />
-          </div>
+          <MessageScreen onNext={nextScreen} />
         )}
         {currentScreen === 3 && (
-          <div className="animate-zoom-in">
-            <MemoriesScreen onNext={nextScreen} />
-          </div>
+          <MemoriesScreen onNext={nextScreen} />
         )}
         {currentScreen === 4 && (
-          <div className="animate-bounce-in">
-            <FinalScreen />
-          </div>
+          <FinalScreen />
         )}
       </div>
 
       {/* Watermark */}
-      <div className="fixed bottom-4 left-4 text-xs text-white/40 pointer-events-none animate-fade-in-delayed">
-        @rooyal_blood_
+      <div className="fixed bottom-4 left-4 text-xs text-white/40 pointer-events-none">
+        
       </div>
     </div>
   )
