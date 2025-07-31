@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Play, Pause } from 'lucide-react'  // Add this import
+import { Play, Pause } from 'lucide-react'
+import{ motion, AnimatePresence } from 'framer-motion'
 
 const BackgroundMusic = ({ musicPlaying, setMusicPlaying }) => {
   const audioRef = useRef(null);
