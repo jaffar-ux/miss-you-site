@@ -9,7 +9,7 @@ export default function FinalScreen({ ...motionProps }) {
     const [isTyping, setIsTyping] = useState(true)
 
     const finalMessage =
-        "Even miles apart, you're all I think about. Every second without you feels incomplete. I miss your smile, your laugh, your voice — everything. You are my peace in this noisy world. No matter the distance, you'll always live in my heart. I can't wait for the day I hold you again. Until then, just know... I miss you more than words can ever say🌙💕"
+        "Tu ketee bhe dhur ho, Mai kete bhe dhur honde tere yaddo mey hee hu 😥, mai ketaa love kartun ki otaa he miss kartu hu tujhe 😓, I love you Muhassina and I lots of miss you maaaaaa 🥲, mai wait karunga tere liye aur kete bhee din ho bad mera dil mat thodnaa 😥, I miss you maaa ❤️‍🩹"
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -42,7 +42,7 @@ export default function FinalScreen({ ...motionProps }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                 >
-                    Forever Yours
+                    Mai kabee tereach hu aur rahunga
                 </motion.h2>
 
                 <motion.div
